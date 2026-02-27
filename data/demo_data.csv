@@ -1,0 +1,16 @@
+ScanTime,CameraLocation,CameraLat,CameraLng,FullName,RiskLevel,Crime_Proceedings,Regional_Status,Priority
+2025-09-01 08:12:00,Auckland City,-36.8509,174.7645,Alex Turner,Restricted,450,High Risk,CRITICAL
+2025-09-01 08:45:00,Wellington,-41.2865,174.7762,Sarah Kim,Moderate,85,Moderate,ROUTINE
+2025-09-01 09:03:00,Canterbury,-43.5321,172.6362,James Patel,Restricted,120,High Risk,CRITICAL
+2025-09-01 09:30:00,Auckland City,-36.8509,174.7645,Sarah Kim,Moderate,450,High Risk,ROUTINE
+2025-09-01 10:15:00,Wellington,-41.2865,174.7762,Alex Turner,Restricted,85,Moderate,ROUTINE
+2025-09-01 10:48:00,Auckland City,-36.8509,174.7645,James Patel,Restricted,450,High Risk,CRITICAL
+2025-09-01 11:22:00,Canterbury,-43.5321,172.6362,Alex Turner,Restricted,120,High Risk,CRITICAL
+2025-09-01 12:00:00,Wellington,-41.2865,174.7762,James Patel,Restricted,85,Moderate,ROUTINE
+2025-09-01 12:34:00,Auckland City,-36.8509,174.7645,Sarah Kim,Moderate,450,High Risk,ROUTINE
+2025-09-01 13:10:00,Canterbury,-43.5321,172.6362,Sarah Kim,Moderate,120,High Risk,ROUTINE
+2025-09-01 13:55:00,Auckland City,-36.8509,174.7645,Alex Turner,Restricted,450,High Risk,CRITICAL
+2025-09-01 14:20:00,Wellington,-41.2865,174.7762,Sarah Kim,Moderate,85,Moderate,ROUTINE
+2025-09-01 15:05:00,Auckland City,-36.8509,174.7645,James Patel,Restricted,450,High Risk,CRITICAL
+2025-09-01 15:40:00,Canterbury,-43.5321,172.6362,Alex Turner,Restricted,120,High Risk,CRITICAL
+2025-09-01 16:15:00,Wellington,-41.2865,174.7762,James Patel,Restricted,85,Moderate,ROUTINE

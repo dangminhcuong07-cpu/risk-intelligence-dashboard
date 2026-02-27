@@ -1,0 +1,22 @@
+# R session artifacts
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+# Environment / credentials — NEVER commit these
+.Renviron
+config.yml
+secrets.R
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# R package library (if using renv)
+renv/library/
+renv/staging/
+
+# Output files
+*.html
+Rplots.pdf
