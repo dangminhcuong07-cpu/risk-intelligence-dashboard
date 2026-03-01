@@ -10,14 +10,14 @@ Built to replicate the kind of multi-source data integration problem common in o
 
 The dashboard ingests two data streams:
 
-1. **Internal surveillance logs** — a normalised SQL Server database (`ForensicDB`) tracking individuals, assigned assets, camera locations, and scan events across five related tables
+1. **Internal risk database** — a normalised SQL Server database (`RiskIntelDB`) tracking individuals, assigned assets, camera locations, and scan events across five related tables
 2. **NZ Police regional crime statistics** — pulled live from [data.govt.nz](https://catalogue.data.govt.nz) via the CKAN API
 
 These are merged and passed through a **priority scoring engine** that classifies each detection as `CRITICAL` or `ROUTINE` based on two intersecting factors:
 - Individual risk classification (Restricted / Moderate)
 - Regional crime index threshold (High Risk / Moderate)
 
-The result is surfaced across five dashboard panels, from a live tactical map through to an auto-generated executive briefing.
+The result is surfaced across five dashboard panels, from a live detection map through to an auto-generated executive briefing.
 
 ---
 
@@ -26,10 +26,10 @@ The result is surfaced across five dashboard panels, from a live tactical map th
 | Panel | Description |
 |---|---|
 | **KPI Bar** | Summary tiles — total detections, critical alerts, individuals tracked, high-risk regions |
-| **Tactical Map** | Leaflet interactive map with colour-coded markers and popup detail |
+| **Detection Map** | Leaflet interactive map with colour-coded markers and popup detail |
 | **Movement Timeline** | Individual detection history plotted by time and location |
 | **Detection Volume** | Hourly detection volume stacked by priority — identifies peak activity windows |
-| **Evidence Log** | Filterable data table with conditional formatting by priority |
+| **Detection Log** | Filterable data table with conditional formatting by priority |
 | **Executive Summary** | Auto-generated written briefing synthesising all findings into a decision-ready report |
 
 ---
@@ -79,7 +79,7 @@ install.packages(c("shiny", "bslib", "leaflet", "DT", "DBI",
                    "odbc", "dplyr", "ggplot2", "ckanr"))
 
 # 2. Clone the repo
-# git clone https://github.com/yourusername/risk-intelligence-dashboard
+# git clone https://github.com/dangminhcuong07-cpu/risk-intelligence-dashboard
 
 # 3. Open app.R in RStudio and click Run App
 #    — or from the console:
@@ -94,7 +94,7 @@ If you have SQL Server Express installed locally:
 
 ```
 Server:   localhost\SQLEXPRESS
-Database: ForensicDB (create this first)
+Database: RiskIntelDB (create this first)
 Auth:     Windows Authentication
 ```
 
