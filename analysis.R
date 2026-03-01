@@ -2,11 +2,11 @@
 # Risk Intelligence — Standalone Analysis Script
 # Author: Michael Dang
 #
-# Purpose: Ad-hoc investigation mode. Pulls all detections from ForensicDB,
+# Purpose: Ad-hoc investigation mode. Pulls all detections from RiskIntelDB,
 #          merges with NZ Police regional context, and outputs a priority
 #          scatter plot. Run this independently of the Shiny app.
 #
-# Requires: SQL Server (localhost\SQLEXPRESS) + ForensicDB
+# Requires: SQL Server (localhost\SQLEXPRESS) + RiskIntelDB
 #           OR falls back to data/demo_data.csv automatically
 # ==============================================================================
 
@@ -66,7 +66,7 @@ get_investigation_data <- function() {
       odbc::odbc(),
       Driver                 = "ODBC Driver 17 for SQL Server",
       Server                 = "localhost\\SQLEXPRESS",
-      Database               = "ForensicDB",
+      Database               = "RiskIntelDB",
       Trusted_Connection     = "yes",
       TrustServerCertificate = "yes",
       timeout                = 2
@@ -173,7 +173,7 @@ if (nrow(results) == 0) {
 
   p <- ggplot(results, aes(x = ScanTime, y = FullName, color = Priority)) +
     geom_point(size = 5, alpha = 0.85) +
-    geom_line(aes(group = FullName), linetype = "dashed", alpha = 0.3) +
+    geom_line(aes(group = FullName), linetype = "dashed", alpha = 0.3, color = "grey60") +
     scale_color_manual(values = c("CRITICAL" = "#e74c3c", "ROUTINE" = "#3498db")) +
     theme_minimal(base_size = 13) +
     labs(

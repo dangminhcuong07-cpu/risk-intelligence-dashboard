@@ -1,10 +1,10 @@
 -- ==============================================================================
--- ForensicDB — Database Schema & Seed Data
+-- RiskIntelDB — Database Schema & Seed Data
 -- Author: Michael Dang
 --
 -- Description: Normalised relational schema for the Risk Intelligence Dashboard.
 --              Five tables track staff, assets, camera infrastructure,
---              assignments, and surveillance scan logs.
+--              assignments, and detection scan logs.
 --
 -- HOW TO USE:
 --   First run  → Execute SECTIONS 1–4 in full (creates + seeds the database)
@@ -34,7 +34,7 @@ GO
 -- SECTION 2: CREATE TABLES
 -- ==============================================================================
 
--- Individuals being monitored
+-- Individuals in system
 CREATE TABLE Staff (
     StaffID   INT          PRIMARY KEY,
     FullName  VARCHAR(100) NOT NULL,

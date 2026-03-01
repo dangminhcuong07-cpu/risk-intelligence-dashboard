@@ -6,7 +6,7 @@
 #              automated risk prioritisation for operational decision-making.
 #
 # Run modes:
-#   LIVE  — requires SQL Server (localhost\SQLEXPRESS) with ForensicDB loaded
+#   LIVE  — requires SQL Server (localhost\SQLEXPRESS) with RiskIntelDB loaded
 #   DEMO  — falls back to data/demo_data.csv automatically (no setup needed)
 # ==============================================================================
 
@@ -62,7 +62,7 @@ get_app_data <- function() {
       odbc::odbc(),
       Driver             = "ODBC Driver 17 for SQL Server",
       Server             = "localhost\\SQLEXPRESS",
-      Database           = "ForensicDB",
+      Database           = "RiskIntelDB",
       Trusted_Connection = "yes",
       timeout            = 2
     )
@@ -120,7 +120,7 @@ ui <- page_sidebar(
                 choices = c("All", "CRITICAL", "ROUTINE")),
     hr(),
     helpText("Data sources:"),
-    helpText("• ForensicDB (SQL Server)"),
+    helpText("• RiskIntelDB (SQL Server)"),
     helpText("• data.govt.nz Police API"),
     hr(),
     uiOutput("last_refreshed")
@@ -156,13 +156,13 @@ ui <- page_sidebar(
   ),
 
   navset_card_underline(
-    nav_panel("Tactical Map",
-      leafletOutput("suspect_map", height = "480px")),
+    nav_panel("Detection Map",
+      leafletOutput("detection_map", height = "480px")),
     nav_panel("Movement Timeline",
       plotOutput("timeline_plot", height = "420px")),
     nav_panel("Detection Volume",
       plotOutput("volume_plot",   height = "420px")),
-    nav_panel("Evidence Log",
+    nav_panel("Detection Log",
       DTOutput("evidence_table")),
     nav_panel("Executive Summary",
       uiOutput("exec_summary"))
@@ -175,7 +175,7 @@ ui <- page_sidebar(
 server <- function(input, output, session) {
 
   # Reactive dataset — refreshes on button click
-  threat_data <- reactive({
+  dashboard_data <- reactive({
     input$refresh
     df <- get_app_data()
     if (!is.null(df) && nrow(df) > 0) {
@@ -186,7 +186,7 @@ server <- function(input, output, session) {
 
   # Filtered view
   filtered_data <- reactive({
-    df <- threat_data()
+    df <- dashboard_data()
     if (input$risk_filter != "All") {
       df <- df %>% filter(Priority == input$risk_filter)
     }
@@ -194,11 +194,11 @@ server <- function(input, output, session) {
   })
 
   # --- KPI boxes ---------------------------------------------------------------
-  output$kpi_total       <- renderUI({ nrow(threat_data()) })
-  output$kpi_critical    <- renderUI({ sum(threat_data()$Priority == "CRITICAL") })
-  output$kpi_individuals <- renderUI({ n_distinct(threat_data()$FullName) })
+  output$kpi_total       <- renderUI({ nrow(dashboard_data()) })
+  output$kpi_critical    <- renderUI({ sum(dashboard_data()$Priority == "CRITICAL") })
+  output$kpi_individuals <- renderUI({ n_distinct(dashboard_data()$FullName) })
   output$kpi_regions     <- renderUI({
-    threat_data() %>%
+    dashboard_data() %>%
       filter(Regional_Status == "High Risk") %>%
       pull(CameraLocation) %>%
       n_distinct()
@@ -209,8 +209,8 @@ server <- function(input, output, session) {
     helpText(paste("Last refresh:", format(Sys.time(), "%H:%M:%S")))
   })
 
-  # --- Tactical Map ------------------------------------------------------------
-  output$suspect_map <- renderLeaflet({
+  # --- Detection Map -----------------------------------------------------------
+  output$detection_map <- renderLeaflet({
     df <- filtered_data()
     req(nrow(df) > 0)
 
@@ -273,7 +273,7 @@ server <- function(input, output, session) {
 
   # --- Detection Volume (trend analysis) ---------------------------------------
   output$volume_plot <- renderPlot({
-    df <- threat_data()
+    df <- dashboard_data()
     req(nrow(df) > 0)
     df$ScanTime <- as.POSIXct(df$ScanTime)
     df$Hour     <- format(df$ScanTime, "%H:00")
@@ -303,7 +303,7 @@ server <- function(input, output, session) {
       )
   })
 
-  # --- Evidence Log ------------------------------------------------------------
+  # --- Detection Log -----------------------------------------------------------
   output$evidence_table <- renderDT({
     datatable(
       filtered_data() %>%
@@ -326,7 +326,7 @@ server <- function(input, output, session) {
 
   # --- Executive Summary -------------------------------------------------------
   output$exec_summary <- renderUI({
-    df <- threat_data()
+    df <- dashboard_data()
     req(nrow(df) > 0)
 
     total      <- nrow(df)
@@ -378,7 +378,7 @@ server <- function(input, output, session) {
         },
         hr(style = "border-color: #444;"),
         p(strong("Data Sources:"),
-          "Internal surveillance database (ForensicDB) cross-referenced with 
+          "Internal risk database (RiskIntelDB) cross-referenced with 
           live NZ Police regional crime statistics via the NZ Government Open Data API (data.govt.nz). 
           Priority scoring is derived by intersecting individual risk classification 
           with regional crime index thresholds."),
