@@ -154,4 +154,4 @@ Those four steps map directly to how Big 4 advisory teams structure analytical d
 
 **Michael Dang**  
 Master of Business Analytics — University of Auckland  
-[linkedin.com/in/cuong-dang](https://linkedin.com/in/cuong-dang)
+[linkedin.com/in/michael-dang-964622193](https://linkedin.com/in/michael-dang-964622193)
