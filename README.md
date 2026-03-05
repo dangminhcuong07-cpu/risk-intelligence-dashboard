@@ -34,6 +34,10 @@ The result is surfaced across five dashboard panels, from a live detection map t
 
 ---
 
+![Tactical Map](data/screenshots/map.png)
+![Executive Summary](data/screenshots/summary.png)
+
+
 ## Architecture
 
 ```
