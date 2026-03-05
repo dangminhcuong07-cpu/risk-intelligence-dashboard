@@ -35,6 +35,9 @@ The result is surfaced across five dashboard panels, from a live detection map t
 | **Detection Log** | Filterable data table with conditional formatting by priority |
 | **Executive Summary** | Auto-generated written briefing synthesising all findings into a decision-ready report |
 
+![Tactical Map](data/map.png)
+![Evidence Log](data/summary.png)
+
 ---
 
 ![Tactical Map](data/screenshots/map.png)
