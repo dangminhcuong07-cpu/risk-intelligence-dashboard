@@ -1,5 +1,8 @@
 # Risk Intelligence Dashboard
 
+> 🟢 **Runs in demo mode — no SQL Server required.**  
+> Clone the repo, open `app.R`, click Run App.
+
 An end-to-end analytics solution that fuses a **normalised SQL database** with a **live NZ Government open data API** to deliver automated risk prioritisation through an interactive R Shiny dashboard.
 
 Built to replicate the kind of multi-source data integration problem common in operational consulting — where decisions must be made by combining internal records with external public data in real time.
@@ -153,7 +156,17 @@ Every consulting engagement eventually becomes a data integration problem. This 
 Those four steps map directly to how Big 4 advisory teams structure analytical deliverables for clients.
 
 ---
+## Roadmap
 
+- **Anomaly detection layer** — replace binary CRITICAL/ROUTINE 
+  with a continuous risk probability score using historical 
+  scan pattern modelling
+- **Automated PDF briefing** — rmarkdown export of the 
+  Executive Summary panel for distribution to non-technical 
+  stakeholders
+- **Shinyapps.io deployment** — public URL for live demo 
+  without local setup
+  
 ## Author
 
 **Michael Dang**  
