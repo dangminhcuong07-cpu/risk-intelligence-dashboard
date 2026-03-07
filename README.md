@@ -120,6 +120,8 @@ risk-intelligence-dashboard/
 ├── data/
 │   └── demo_data.csv       # Portfolio fallback — no SQL needed
 │
+├── map.png                 # Dashboard screenshot — detection map
+├── summary.png             # Dashboard screenshot — executive summary
 ├── .gitignore
 └── README.md
 ```
@@ -155,6 +157,7 @@ Every consulting engagement eventually becomes a data integration problem. This 
 Those four steps map directly to how Big 4 advisory teams structure analytical deliverables for clients.
 
 ---
+
 ## Roadmap
 
 - **Anomaly detection layer** — replace binary CRITICAL/ROUTINE 
