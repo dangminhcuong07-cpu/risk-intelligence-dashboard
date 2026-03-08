@@ -167,6 +167,5 @@ Currently open to consulting and analytics opportunities with Big 4 firms and fi
 understanding of how consulting teams operationalise analytical systems.
 
 **Connect**: https://linkedin.com/in/michael-dang-964622193
-```
 
 ---
