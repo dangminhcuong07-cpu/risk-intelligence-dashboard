@@ -9,7 +9,7 @@
 
 This is an operational consulting problem solved end-to-end: integrating internal asset tracking data with external risk context to automate decision-making under uncertainty. It demonstrates the analytical DNA required in advisory — database design, API integration, scoring logic, and stakeholder-ready communication.
 
-**Context**: Built during my Master's programme at the University of Auckland whilst working in aviation operations. Designed to reflect how Big 4 teams operationalise data in client environments.
+**Context**: Built as a capstone project during my Master's degree at University of Auckland. Designed to demonstrate the analytical patterns and systems thinking required in consulting environments: multi-source data integration, operational resilience, and stakeholder communication.
 
 ---
 
@@ -159,14 +159,14 @@ Insight: Detection spike correlated with high-crime region + restricted-access p
 
 ## About the Author
 
-Built by Michael Dang whilst pursuing Master of Business Analytics at University of Auckland and working in aviation operations.
+Built by Michael Dang as a capstone project during Master of Business Analytics at University of Auckland.
 
-**Background**: Big 4 Audit (EY Vietnam) → Aviation Treasury Operations → Data Systems Design
+**Background**: Big 4 Audit (EY Vietnam) → Now pursuing Data Systems Design
 
-This project sits at the intersection of three domains: financial risk (audit background), operational data (real-time systems), and decision-ready analytics (what consulting requires).
-
-Currently open to consulting and analytics opportunities with Big 4 firms and finance-dominant organisations in New Zealand.
+Currently open to consulting and analytics opportunities with Big 4 firms and finance-dominant organisations in New Zealand. This project demonstrates my 
+understanding of how consulting teams operationalise analytical systems.
 
 **Connect**: https://linkedin.com/in/michael-dang-964622193
+```
 
 ---
