@@ -63,12 +63,12 @@ ThreatScore = PersonRisk × EquipmentRisk × RegionalRisk
 | Region | High Risk 2.0, Moderate 1.0 |
 | Quantity | more than one item: ×1.5 |
 | Payment | cash: ×1.3 |
-| Time of day | 9pm to 5am: ×1.4 |
+| Time of day | 9pm to 6am: ×1.4 |
 | Vehicle | high-risk plate ×2.0; medium-risk plate out of district ×1.5; other out-of-district plate ×1.3 |
 
 Priority thresholds: CRITICAL ≥ 12.0, ELEVATED ≥ 5.5, ROUTINE ≥ 2.0, CLEAR below 2.0.
 
-A district is classed as High Risk when it recorded at least 10,000 proceedings (NZ Police, year ended December 2023). At this threshold 7 of the 12 districts are High Risk and 5 are Moderate. A lower threshold of 7,000 placed nearly every district in the High Risk group, which removed the factor's usefulness.
+A district is classed as High Risk when it recorded at least 10,000 proceedings (NZ Police, year ended December 2023). Using the 2023 fallback figures, 7 of the 12 districts are High Risk and 5 are Moderate at this threshold. A lower threshold of 7,000 placed nearly every district in the High Risk group, which removed the factor's usefulness.
 
 ### 4. Executive summary
 
