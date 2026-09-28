@@ -20,3 +20,7 @@ renv/staging/
 # Output files
 *.html
 Rplots.pdf
+
+# Local working notes (not part of the project)
+GITHUB_REPO_RECRUITER_ASSESSMENT.md
+session_master_prompt.md
